@@ -15,6 +15,7 @@ include ('secret.php');
         <script src="js/autosize.js"></script>
     </head>
     <body>
+      
         <?php
         $configArray = parse_ini_file("config");
         echo '<a href="' . $configArray["appUrl"] . '"><img src="images/' . $configArray["logo"] . '"/></a>';
@@ -26,24 +27,15 @@ include ('secret.php');
                   <form action="view.php" method="POST">
                   <div class="col-1">
                     <label>
-                    Your secret is ready to be opened, but remember this is one time view, keep that in mind before click "Show Secret"
+                    Bitte beachten: Das Passwort kann nur einmal angzeigt werden. Notieren Sie es an einem sicheren Ort.
                     <input type = "hidden" name = "token" value = "' . $secretToken . '" readonly = "readonly" />
                     </label>
                    </div>
                 ';
-                if (isSecretProtected($secretToken)) {
-                    echo '
-                    <div class="col-1">
-                    <label>
-                    The Secret is password protected, please provide a valid password
-                    <input required placeholder="Type password" type="password" name="password" value=""/>
-                    </label>
-                    </div>
-                    ';
-                }
+               
                 echo '
                 <div class="col-submit">
-                <button type="submit" class="submitbtn" name="showSecret" value="showSecret">Show Secret</button>
+                <button type="submit" class="submitbtn" name="showSecret" value="showSecret">Passwort anzeigen</button>
                 </form>';
             } else {
                 echo '
@@ -51,11 +43,11 @@ include ('secret.php');
                   <form>
                   <div class="col-1">
                   <label>
-                    The secret does not exist
+                    A C H T U N G ! Das Passwort wurde bereits angesehen.
                   </label>
                   </div>
                   <div class="col-submit">
-                    <button type="submit" class="submitbtn" name="goBack" value="goBack">Go Back</button>
+                    <button type="submit" class="submitbtn" name="goBack" value="goBack">Zurück</button>
                   </div>
                   </form>
                   </div>
@@ -72,12 +64,12 @@ include ('secret.php');
                       <form>
                       <div class="col-1">
                       <label>
-                        Secret Data
+                        Geteiltes Passwort
                         <input readonly value="'.$secretData.'" tabindex="1">
                       </label>
                       </div>
                       <div class="col-submit">
-                        <button type="submit" class="submitbtn" name="createOwn" value="createOwn">Create your own Secret</button>
+                        <button type="submit" class="submitbtn" name="createOwn" value="createOwn">Eigenes Passwort teilen</button>
                       </div>
                       </form>
                     ';
@@ -88,12 +80,12 @@ include ('secret.php');
                       <form>
                       <div class="col-1">
                       <label>
-                        Secret Data
+                        Geteiltes Passwort
                         <textarea class="auto-size" readonly tabindex="1">'.$secretData.'</textarea>
                       </label>
                       </div>
                       <div class="col-submit">
-                        <button type="submit" class="submitbtn" name="createOwn" value="createOwn">Create your own Secret</button>
+                        <button type="submit" class="submitbtn" name="createOwn" value="createOwn">Eigenes Passwort teilen</button>
                       </div>
                       </form>
                       <script>$(\'textarea.auto-size\').textareaAutoSize();</script>
@@ -105,11 +97,11 @@ include ('secret.php');
                   <form>
                   <div class="col-1">
                   <label>
-                    The secret does not exist
+                    Passwort Link nicht vorhanden.
                   </label>
                   </div>
                   <div class="col-submit">
-                    <button type="submit" class="submitbtn" name="goBack" value="goBack">Go Back</button>
+                    <button type="submit" class="submitbtn" name="goBack" value="goBack">Zurück</button>
                   </div>
                   </form>
                   </div>
