@@ -1,0 +1,12 @@
+[General Settings]
+appUrl = "https://sapvahv.innsideit.de/";
+cryptKey = "dsasdfasdff432g2g245gghtk76k7whf";
+siteName = "innsideIT - PasswordSharing";
+logo = "logo.png";
+
+
+[Database Settings]
+dbHost = "localhost";
+dbUser = "otpsdba";
+dbPassword = "O!dqf880";
+dbName = "otps";
