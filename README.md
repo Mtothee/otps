@@ -1,4 +1,5 @@
 # otps
+https://img.shields.io/badge/Status-Aktiv-Green
 
 A simple Version of [onetimesecret](https://github.com/mvazquezc/onetimesecret) by [mvazquezc](https://github.com/mvazquezc).
 
