@@ -1,5 +1,5 @@
 [General Settings]
-appUrl = "https://xxxxx.innsideit.de/";
+appUrl = "https://sub.domain.de/";
 cryptKey = "dsasdfasdff432g2g245gghtk76k7whf";
 siteName = "xxxxx - PasswordSharing";
 logo = "logo.png";
